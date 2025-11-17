@@ -1,7 +1,8 @@
-import { Octokit } from "@octokit/action";
+// ai-review.mjs
+import { Octokit } from "@octokit/rest";
 import OpenAI from "openai";
 
-const octokit = new Octokit();
+const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 async function run() {
