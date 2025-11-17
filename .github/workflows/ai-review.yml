@@ -1,0 +1,25 @@
+name: AI Code Review
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout student repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Setup Node
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3. Run your AI review script
+      - name: Run AI Review
+        run: node ai-review.mjs
