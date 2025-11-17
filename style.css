@@ -1,0 +1,9 @@
+body {
+    width: min(90%, 1200px);
+    margin: auto;
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+  
+  .container {
+    text-align: center;
+  }
